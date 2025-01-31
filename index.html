@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheep | Hadi</title>
+  <style>
+    /*CSS*/
+html, body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  box-sizing:border-box ;
+  overflow: hidden;
+  font-family: Helvetica;
+}
+#tree{
+  width:100%;
+  height:100%;
+}
+[data-n-id="111"] circle {
+  fill: orangered;
+}
+[data-n-id="2"] circle {
+  fill: green;
+}
+[data-n-id="3"] circle {
+  fill: red;
+}
+[data-n-id="4"] circle {
+  fill: green ;
+}
+[data-n-id="5"] circle {
+  fill: gray ;
+}
+/* جديه */
+[data-n-id="222"] circle{
+  fill:brown;
+}
+h1{
+  display:flex;
+  color:block ;
+  position:fixed;
+  top:0 ;
+  left:40%;
+  z-index: 1000;
+  padding:10px ;
+  width:250px ;
+  box-shadow:0 4px 8px 0 rgba(0,0,0,0.3);
+  border-radius:30px;
+  background-color:#ddd;
+}
+@media screen and (max-width:900px){
+  h1{
+    left:10%;
+  }
+}
+  </style>
+</head>
+<body>
+<!--HTML-->
+<script src="https://balkan.app/js/OrgChart.js"></script>
+<div id="tree"></div>
+
+<h1>مشروع نعاج هادي</h1>
+
+ <script>
+   //JavaScript
+
+var chart = new OrgChart(document.getElementById("tree"), {
+  mode:"dark", 
+  template: "belinda",
+  
+  mouseScrool: OrgChart.action.none,
+  enableSearch: false,
+  nodeBinding: {
+    img_0: "img",
+    field_0: "name",
+    field_1: "title"
+  },
+  
+  nodes: [
+    { id:111, name: "دولي" ,
+    title: "الام", img: "sheep.png" },
+    { id: 2, pid: 111, name: "رخل دولي", title: "حيه", img: "sheep.png" },
+    { id: 3, pid: 111, name: "كبش", title: "تم البيع", img: "sheep.png" },
+    { id: 4, pid: 111, name: "رخل دولي",
+    title:"حيه", img: "sheep.png" }, 
+    { id: 5, pid: 2, name: "رخل دولي", title: "حيه", img: "sheep.png" }, 
+    
+    {id:222,name:"جديه", title:"شاه", img:"sheep.png"}, 
+    ]
+});
+ </script>
+</body>
+</html>
